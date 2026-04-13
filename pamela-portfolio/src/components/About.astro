@@ -1,0 +1,39 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
+  <div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+      <div class="lg:col-span-4">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
+        >
+          About Me
+        </h2>
+        <div
+          class="w-[75px] h-[5px] mt-2 rounded-full"
+          style={`background-color: ${siteConfig.accentColor}`}
+        ></div>
+      </div>
+
+      <div class="lg:col-span-8 space-y-8">
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
+          Hi, I’m Pamela Yung. I’m a Cognitive Science student at UC San Diego
+          specializing in Machine Learning and Neural Computation. I enjoy
+          building projects that connect data, modeling, and real-world systems,
+          whether that means training machine learning models, analyzing
+          behavioral time-series data, or leading interdisciplinary teams
+          through Triton Robotics.
+        </p>
+
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
+          My work sits at the intersection of analytics, research, and practical
+          problem solving. I’m especially interested in opportunities where I
+          can keep learning, work across teams, and build tools that are
+          actually useful to people.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
