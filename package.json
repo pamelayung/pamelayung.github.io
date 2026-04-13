@@ -1,18 +1,16 @@
 {
   "name": "pamelayung.github.io",
-  "private": true,
-  "version": "0.0.0",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "react": "...",
-    "react-dom": "..."
-  },
-  "devDependencies": {
-    "vite": "...",
-    "@vitejs/plugin-react": "..."
+    "astro": "^5.12.3",
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11"
   }
 }
