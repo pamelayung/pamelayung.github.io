@@ -39,6 +39,13 @@ export const siteConfig = {
       link: "", // 
       skills: ["Figma", "User Research", "Product Thinking", "UAT"],
     },
+    {
+    name: "Propel Benefits & Grocery Planning Redesign",
+    description:
+      "Designed a high-fidelity mobile case study for Propel that extends the app beyond EBT balance tracking into grocery planning, inventory reminders, and budgeting support.",
+    link: "/projects/propel",
+    skills: ["Figma", "UX Research", "Product Design", "User Flows"],
+    },
   ],
   experience: [
     {
