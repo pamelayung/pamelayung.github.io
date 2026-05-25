@@ -5,31 +5,14 @@ import Footer from "../../components/Footer.astro";
 
 const accent = siteConfig.accentColor || "#1d4ed8";
 
-const sections = [
-  {
-    number: "01",
-    title: "Overview",
-    body: [
-      "Propel helps users manage benefits-related information, including EBT balance tracking and support resources. For this redesign, I focused on connecting benefits, grocery inventory, and budgeting so users could make clearer decisions around food and spending.",
-      "My role included contributing to user research, identifying user needs, mapping user flows, and creating high-fidelity prototype screens that communicate the redesigned experience.",
-    ],
-  },
-  {
-    number: "02",
-    title: "Problem",
-    body: [
-      "People who rely on EBT benefits often need to make careful decisions around grocery spending, food inventory, and upcoming deposits. However, checking a balance alone does not always help users understand what they already have at home, what food may expire soon, or how to plan purchases around their remaining benefits.",
-    ],
-    callout:
-      "How might we help Propel users connect their benefits, grocery inventory, and spending habits so they can make more informed food and budgeting decisions?",
-  },
-  {
-    number: "03",
-    title: "User Research",
-    body: [
-      "Our research showed that users need more than a balance number. They need to understand what food they already have, what may expire soon, when their next deposit is coming, and how their spending affects future grocery decisions.",
-    ],
-  },
+const navItems = [
+  ["Overview", "#overview"],
+  ["Problem", "#problem"],
+  ["Research", "#research"],
+  ["Insights", "#insights"],
+  ["User Flows", "#flows"],
+  ["Prototype", "#prototype"],
+  ["Reflection", "#reflection"],
 ];
 
 const insights = [
@@ -91,47 +74,26 @@ const prototypeScreens = [
     />
   </head>
 
-  <body class="bg-white text-gray-900">
+  <body class="bg-[#f8fafc] text-gray-950">
     <Header />
 
-    <main>
-      <!-- HERO -->
-      <section
-        id="hero"
-        class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
-        style={`--accent-color: ${accent}`}
-      >
-        <!-- Gradient overlay like Ryan's theme -->
-        <div
-          class="absolute inset-0 -z-10"
-          style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${accent}40 0%, ${accent}25 20%, ${accent}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
-        />
-
-        <!-- Subtle decorative grid -->
-        <svg
-          aria-hidden="true"
-          class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+    <main class="min-h-screen px-5 sm:px-8 lg:px-12 py-24">
+      <!-- MAIN SHELL -->
+      <div class="mx-auto max-w-7xl rounded-[2rem] border border-gray-200 bg-white shadow-sm overflow-hidden">
+        <!-- HERO -->
+        <section
+          class="relative overflow-hidden border-b border-gray-200 px-6 sm:px-10 lg:px-14 py-20 lg:py-28"
+          style={`--accent-color: ${accent}`}
         >
-          <defs>
-            <pattern
-              id="grid"
-              width="80"
-              height="80"
-              x="50%"
-              y="-1"
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M.5 80V.5H80" fill="none"></path>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" stroke-width="0" fill="url(#grid)"></rect>
-        </svg>
+          <div
+            class="absolute inset-0 opacity-80"
+            style={`background: radial-gradient(ellipse 900px 600px at 0% 0%, ${accent}30 0%, ${accent}14 35%, transparent 70%)`}
+          />
 
-        <div class="h-full max-w-7xl mx-auto p-8 sm:p-12 md:p-24 flex items-center">
-          <div class="max-w-6xl">
+          <div class="relative z-10 max-w-5xl">
             <a
               href="/"
-              class="inline-block mb-14 font-mono text-sm text-gray-600 hover:text-gray-900 transition"
+              class="inline-flex items-center gap-2 mb-12 font-mono text-sm text-gray-500 hover:text-gray-900 transition"
             >
               ← Back to Home
             </a>
@@ -143,9 +105,7 @@ const prototypeScreens = [
               UX CASE STUDY / PRODUCT DESIGN / FIGMA
             </p>
 
-            <h1
-              class="text-5xl sm:text-6xl md:text-8xl xl:text-9xl font-bold leading-[0.9] tracking-tight text-gray-900"
-            >
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] text-gray-950">
               Propel Benefits
               <br />
               <span style={`color: ${accent}`}>
@@ -155,264 +115,301 @@ const prototypeScreens = [
               Redesign
             </h1>
 
-            <p
-              class="mt-10 max-w-4xl text-lg sm:text-xl md:text-2xl font-mono leading-relaxed text-gray-600"
-            >
+            <p class="mt-8 max-w-3xl text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
               I redesigned Propel into a benefits and grocery planning tool that helps users track EBT balance,
               monitor grocery inventory, reduce food waste, and make more informed spending decisions.
             </p>
 
-            <div class="mt-10 flex flex-wrap gap-3">
+            <div class="mt-8 flex flex-wrap gap-3">
               {["Figma", "UX Research", "Product Design", "User Flows"].map((tag) => (
-                <span class="px-4 py-2 bg-white/80 border border-gray-200 text-gray-700 rounded-lg text-sm font-mono shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-md">
+                <span class="rounded-full border border-gray-200 bg-white/80 px-4 py-2 font-mono text-xs text-gray-600 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-md">
                   {tag}
                 </span>
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
-        <div
-          class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in"
-        >
-          <a href="#overview" class="font-mono text-sm hover:text-gray-900 transition">
-            Overview
-          </a>
-          <a href="#research" class="font-mono text-sm hover:text-gray-900 transition">
-            Research
-          </a>
-          <a href="#prototype" class="font-mono text-sm hover:text-gray-900 transition">
-            Prototype
-          </a>
-          <a href="#reflection" class="font-mono text-sm hover:text-gray-900 transition">
-            Reflection
-          </a>
-        </div>
-      </section>
+        <!-- CONTENT GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr]">
+          <!-- SIDEBAR -->
+          <aside class="hidden lg:block border-r border-gray-200 bg-gray-50/70 px-6 py-10">
+            <div class="sticky top-24">
+              <p class="font-mono text-xs uppercase tracking-widest text-gray-400 mb-5">
+                Case Study
+              </p>
 
-      <!-- HERO IMAGE -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="max-w-6xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1">
-          <img
-            src="/images/propel/hero.png"
-            alt="Propel app redesign screens"
-            class="w-full max-w-5xl mx-auto rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-[1.01]"
-          />
-        </div>
-      </section>
+              <nav class="space-y-1">
+                {navItems.map(([label, href]) => (
+                  <a
+                    href={href}
+                    class="block rounded-xl px-4 py-3 font-mono text-sm text-gray-600 transition hover:bg-white hover:text-gray-950 hover:shadow-sm"
+                  >
+                    {label}
+                  </a>
+                ))}
+              </nav>
 
-      <!-- CONTENT SECTIONS -->
-      {
-        sections.map((section) => (
-          <section
-            id={section.title === "Overview" ? "overview" : section.title === "User Research" ? "research" : undefined}
-            class="p-8 sm:p-12 md:p-16 lg:p-24"
-          >
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-              <div class="lg:col-span-4">
-                <p class="font-mono text-sm" style={`color: ${accent}`}>
-                  {section.number}
+              <div class="mt-10 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                <p class="font-mono text-xs uppercase tracking-widest text-gray-400">
+                  Role
+                </p>
+                <p class="mt-2 font-bold text-gray-950">
+                  UX Designer
                 </p>
 
-                <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
-                  {section.title}
-                </h2>
+                <p class="mt-5 font-mono text-xs uppercase tracking-widest text-gray-400">
+                  Tools
+                </p>
+                <p class="mt-2 font-mono text-sm text-gray-600">
+                  Figma, Research, Prototyping
+                </p>
+              </div>
+            </div>
+          </aside>
 
-                <div
-                  class="w-[75px] h-[5px] mt-4 rounded-full"
-                  style={`background-color: ${accent}`}
+          <!-- MAIN CONTENT -->
+          <div class="px-6 sm:px-10 lg:px-14 py-10 lg:py-14">
+            <!-- HERO IMAGE -->
+            <section class="mb-16">
+              <div class="group rounded-3xl border border-gray-200 bg-gray-50 p-5 sm:p-8 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1">
+                <img
+                  src="/images/propel/hero.png"
+                  alt="Propel app redesign screens"
+                  class="mx-auto w-full max-w-2xl rounded-2xl border border-gray-200 transition-transform duration-300 group-hover:scale-[1.01]"
                 />
               </div>
+            </section>
 
-              <div class="lg:col-span-8 space-y-6">
-                {section.body.map((paragraph) => (
-                  <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-                    {paragraph}
+            <!-- OVERVIEW -->
+            <section id="overview" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    01
                   </p>
-                ))}
-
-                {section.callout && (
-                  <div class="bg-gray-900 text-white rounded-2xl p-6 sm:p-8 mt-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <p class="text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed">
-                      {section.callout}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-        ))
-      }
-
-      <!-- INSIGHTS -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          <div class="lg:col-span-4">
-            <p class="font-mono text-sm" style={`color: ${accent}`}>
-              04
-            </p>
-
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
-              Insights
-            </h2>
-
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${accent}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {insights.map(([title, text], index) => (
-              <div class="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <p class="font-mono text-sm" style={`color: ${accent}`}>
-                  INSIGHT 0{index + 1}
-                </p>
-
-                <h3 class="mt-4 text-xl font-bold group-hover:translate-x-1 transition-transform duration-300">
-                  {title}
-                </h3>
-
-                <p class="mt-3 font-mono text-gray-600 leading-relaxed">
-                  {text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- USER FLOWS -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          <div class="lg:col-span-4">
-            <p class="font-mono text-sm" style={`color: ${accent}`}>
-              05
-            </p>
-
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
-              User Flows
-            </h2>
-
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${accent}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8 space-y-8">
-            {userFlows.map(([src, caption]) => (
-              <figure class="group bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
-                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
-                  <img
-                    src={src}
-                    alt={caption}
-                    class="w-full max-h-[380px] object-contain rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
-                  />
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    Overview
+                  </h2>
                 </div>
 
-                <figcaption class="mt-4 text-sm font-mono text-gray-600 leading-relaxed">
-                  {caption}
-                </figcaption>
-
-                <p
-                  class="mt-3 font-mono text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-                  style={`color: ${accent}`}
-                >
-                  Explore flow →
-                </p>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <!-- FINAL PROTOTYPE -->
-      <section id="prototype" class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          <div class="lg:col-span-4">
-            <p class="font-mono text-sm" style={`color: ${accent}`}>
-              06
-            </p>
-
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
-              Final Prototype
-            </h2>
-
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${accent}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8">
-            <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-              The final prototype focuses on three connected areas: benefits tracking, grocery inventory,
-              and budgeting support.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-              {prototypeScreens.map(([src, alt, caption]) => (
-                <figure class="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
-                  <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50 py-6">
-                    <img
-                      src={src}
-                      alt={alt}
-                      class="mx-auto w-full max-w-[245px] rounded-xl transition-transform duration-300 group-hover:scale-105"
-                    />
-
-                    <div class="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/5 transition duration-300"></div>
-                  </div>
-
-                  <figcaption class="mt-5 text-sm font-mono text-gray-600 leading-relaxed">
-                    {caption}
-                  </figcaption>
-
-                  <p
-                    class="mt-4 font-mono text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-                    style={`color: ${accent}`}
-                  >
-                    View screen →
+                <div class="space-y-6">
+                  <p class="font-mono text-lg leading-relaxed text-gray-600">
+                    Propel helps users manage benefits-related information, including EBT balance tracking and support resources.
+                    For this redesign, I focused on connecting benefits, grocery inventory, and budgeting so users could make clearer
+                    decisions around food and spending.
                   </p>
-                </figure>
-              ))}
-            </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {[
+                      ["Role", "UX Designer"],
+                      ["Focus", "Benefits + grocery planning"],
+                      ["Output", "High-fidelity prototype"],
+                    ].map(([label, value]) => (
+                      <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                        <p class="font-mono text-xs uppercase tracking-widest text-gray-400">
+                          {label}
+                        </p>
+                        <p class="mt-2 font-bold text-gray-950">
+                          {value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- PROBLEM -->
+            <section id="problem" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    02
+                  </p>
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    Problem
+                  </h2>
+                </div>
+
+                <div class="space-y-6">
+                  <p class="font-mono text-lg leading-relaxed text-gray-600">
+                    People who rely on EBT benefits often need to make careful decisions around grocery spending, food inventory,
+                    and upcoming deposits. However, checking a balance alone does not always help users understand what they already
+                    have at home, what food may expire soon, or how to plan purchases around their remaining benefits.
+                  </p>
+
+                  <div class="rounded-3xl bg-gray-950 p-6 sm:p-8 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                    <p class="text-2xl sm:text-3xl font-bold leading-snug">
+                      How might we help Propel users connect their benefits, grocery inventory, and spending habits so they can make more informed food and budgeting decisions?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- RESEARCH -->
+            <section id="research" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    03
+                  </p>
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    Research
+                  </h2>
+                </div>
+
+                <div class="rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm">
+                  <p class="font-mono text-lg leading-relaxed text-gray-600">
+                    Our research showed that users need more than a balance number. They need to understand what food they already have,
+                    what may expire soon, when their next deposit is coming, and how their spending affects future grocery decisions.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- INSIGHTS -->
+            <section id="insights" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    04
+                  </p>
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    Insights
+                  </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                  {insights.map(([title, text], index) => (
+                    <div class="group rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                      <p class="font-mono text-xs uppercase tracking-widest" style={`color: ${accent}`}>
+                        Insight 0{index + 1}
+                      </p>
+
+                      <h3 class="mt-4 text-xl font-bold group-hover:translate-x-1 transition-transform duration-300">
+                        {title}
+                      </h3>
+
+                      <p class="mt-3 font-mono text-sm leading-relaxed text-gray-600">
+                        {text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <!-- USER FLOWS -->
+            <section id="flows" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    05
+                  </p>
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    User Flows
+                  </h2>
+                </div>
+
+                <div class="space-y-6">
+                  {userFlows.map(([src, caption]) => (
+                    <figure class="group rounded-3xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                      <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4 overflow-hidden">
+                        <img
+                          src={src}
+                          alt={caption}
+                          class="mx-auto w-full max-w-xl max-h-[260px] object-contain rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
+                        />
+                      </div>
+
+                      <figcaption class="mt-4 font-mono text-sm leading-relaxed text-gray-600">
+                        {caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <!-- FINAL PROTOTYPE -->
+            <section id="prototype" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    06
+                  </p>
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    Prototype
+                  </h2>
+                </div>
+
+                <div>
+                  <p class="font-mono text-lg leading-relaxed text-gray-600">
+                    The final prototype focuses on three connected areas: benefits tracking, grocery inventory,
+                    and budgeting support.
+                  </p>
+
+                  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+                    {prototypeScreens.map(([src, alt, caption]) => (
+                      <figure class="group rounded-3xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="relative rounded-2xl border border-gray-200 bg-gray-50 px-4 py-8 overflow-hidden">
+                          <img
+                            src={src}
+                            alt={alt}
+                            class="mx-auto w-full max-w-[120px] rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105"
+                          />
+
+                          <div class="absolute inset-0 bg-gray-950/0 transition group-hover:bg-gray-950/[0.03]"></div>
+                        </div>
+
+                        <figcaption class="mt-4 font-mono text-xs leading-relaxed text-gray-600">
+                          {caption}
+                        </figcaption>
+
+                        <p
+                          class="mt-3 font-mono text-xs opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
+                          style={`color: ${accent}`}
+                        >
+                          View screen →
+                        </p>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- REFLECTION -->
+            <section id="reflection" class="scroll-mt-28 border-t border-gray-200 py-14">
+              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+                <div>
+                  <p class="font-mono text-sm" style={`color: ${accent}`}>
+                    07
+                  </p>
+                  <h2 class="mt-2 text-4xl sm:text-5xl font-bold tracking-tight">
+                    Reflection
+                  </h2>
+                </div>
+
+                <div class="rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <p class="font-mono text-lg leading-relaxed text-gray-600">
+                    This project helped me think more intentionally about how product design can reduce cognitive load.
+                    Benefits information can easily become overwhelming, so I focused on designing screens that help users
+                    quickly understand what matters and what they can do next.
+                  </p>
+
+                  <p class="mt-6 font-mono text-lg leading-relaxed text-gray-600">
+                    If I continued this project, I would test the prototype with users to understand whether the dashboard,
+                    grocery inventory, and budgeting tools feel clear and useful in real situations.
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
-
-      <!-- REFLECTION -->
-      <section id="reflection" class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          <div class="lg:col-span-4">
-            <p class="font-mono text-sm" style={`color: ${accent}`}>
-              07
-            </p>
-
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
-              Reflection
-            </h2>
-
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${accent}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8 bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-              This project helped me think more intentionally about how product design can reduce cognitive load.
-              Benefits information can easily become overwhelming, so I focused on designing screens that help users
-              quickly understand what matters and what they can do next.
-            </p>
-
-            <p class="mt-6 text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-              If I continued this project, I would test the prototype with users to understand whether the dashboard,
-              grocery inventory, and budgeting tools feel clear and useful in real situations.
-            </p>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
 
     <Footer />
