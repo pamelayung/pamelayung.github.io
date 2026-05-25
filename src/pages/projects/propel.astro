@@ -1,4 +1,5 @@
 ---
+import "../../styles/global.css";
 import { siteConfig } from "../../config";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
@@ -72,6 +73,7 @@ const prototypeScreens = [
       name="description"
       content="A UX case study redesigning Propel into a benefits and grocery planning tool."
     />
+    <link rel="icon" type="image/svg+xml" href="/fruit-favicon.png" />
   </head>
 
   <body class="bg-[#f8fafc] text-gray-950">
@@ -95,7 +97,7 @@ const prototypeScreens = [
               href="/"
               class="inline-flex items-center gap-2 mb-12 font-mono text-sm text-gray-500 hover:text-gray-900 transition"
             >
-              ← Back to Home
+              Back to Home
             </a>
 
             <p
@@ -176,6 +178,8 @@ const prototypeScreens = [
                 <img
                   src="/images/propel/hero.png"
                   alt="Propel app redesign screens"
+                  data-expandable
+                  data-src="/images/propel/hero.png"
                   class="mx-auto w-full max-w-2xl rounded-2xl border border-gray-200 transition-transform duration-300 group-hover:scale-[1.01]"
                 />
               </div>
@@ -183,7 +187,7 @@ const prototypeScreens = [
 
             <!-- OVERVIEW -->
             <section id="overview" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-12">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     01
@@ -222,7 +226,7 @@ const prototypeScreens = [
 
             <!-- PROBLEM -->
             <section id="problem" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-8">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     02
@@ -250,7 +254,7 @@ const prototypeScreens = [
 
             <!-- RESEARCH -->
             <section id="research" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-8">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     03
@@ -271,7 +275,7 @@ const prototypeScreens = [
 
             <!-- INSIGHTS -->
             <section id="insights" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-8">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     04
@@ -303,7 +307,7 @@ const prototypeScreens = [
 
             <!-- USER FLOWS -->
             <section id="flows" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-8">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     05
@@ -320,6 +324,8 @@ const prototypeScreens = [
                         <img
                           src={src}
                           alt={caption}
+                          data-expandable
+                          data-src={src}
                           class="mx-auto w-full max-w-xl max-h-[260px] object-contain rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
                         />
                       </div>
@@ -335,7 +341,7 @@ const prototypeScreens = [
 
             <!-- FINAL PROTOTYPE -->
             <section id="prototype" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-8">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     06
@@ -353,12 +359,17 @@ const prototypeScreens = [
 
                   <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
                     {prototypeScreens.map(([src, alt, caption]) => (
-                      <figure class="group rounded-3xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                      <figure
+                        class="group rounded-3xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-zoom-in"
+                        data-expandable
+                        data-src={src}
+                        data-alt={alt}
+                      >
                         <div class="relative rounded-2xl border border-gray-200 bg-gray-50 px-4 py-8 overflow-hidden">
                           <img
                             src={src}
                             alt={alt}
-                            class="mx-auto w-full max-w-[120px] rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105"
+                            class="mx-auto w-full max-w-[120px] rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105 pointer-events-none"
                           />
 
                           <div class="absolute inset-0 bg-gray-950/0 transition group-hover:bg-gray-950/[0.03]"></div>
@@ -372,7 +383,7 @@ const prototypeScreens = [
                           class="mt-3 font-mono text-xs opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0"
                           style={`color: ${accent}`}
                         >
-                          View screen →
+                          View screen
                         </p>
                       </figure>
                     ))}
@@ -383,7 +394,7 @@ const prototypeScreens = [
 
             <!-- REFLECTION -->
             <section id="reflection" class="scroll-mt-28 border-t border-gray-200 py-14">
-              <div class="grid grid-cols-1 xl:grid-cols-[180px_1fr] gap-8">
+              <div class="grid grid-cols-1 xl:grid-cols-[300px_1fr] gap-8">
                 <div>
                   <p class="font-mono text-sm" style={`color: ${accent}`}>
                     07
@@ -410,8 +421,70 @@ const prototypeScreens = [
           </div>
         </div>
       </div>
-    </main>
+        </main>
 
+    <!-- IMAGE LIGHTBOX -->
+    <div
+      id="image-lightbox"
+      class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 px-6 py-8"
+    >
+      <button
+        id="lightbox-close"
+        class="absolute right-6 top-6 rounded-full bg-white px-4 py-2 font-mono text-sm text-gray-900 shadow-lg transition hover:bg-gray-100"
+        aria-label="Close expanded image"
+      >
+        Close
+      </button>
+
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+        class="max-h-[85vh] max-w-[90vw] rounded-2xl bg-white object-contain shadow-2xl"
+      />
+    </div>
+
+    <script>
+      const expandableItems = document.querySelectorAll("[data-expandable]");
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const closeButton = document.getElementById("lightbox-close");
+
+      expandableItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const imageSource = item.getAttribute("data-src");
+          const imageAlt = item.getAttribute("data-alt") || "";
+
+          lightboxImage.setAttribute("src", imageSource);
+          lightboxImage.setAttribute("alt", imageAlt);
+
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        lightboxImage.setAttribute("src", "");
+        document.body.style.overflow = "";
+      };
+
+      closeButton.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !lightbox.classList.contains("hidden")) {
+          closeLightbox();
+        }
+      });
+    </script>
     <Footer />
   </body>
 </html>

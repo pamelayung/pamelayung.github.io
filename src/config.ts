@@ -12,24 +12,31 @@ export const siteConfig = {
     "Hi, I’m Pamela Yung. I’m a Cognitive Science student at UC San Diego specializing in Machine Learning and Neural Computation. I enjoy building projects that connect data, modeling, and real-world systems, whether that means training machine learning models, analyzing behavioral time-series data, or leading interdisciplinary teams through Triton Robotics",
   projects: [
     {
+    name: "Propel Benefits & Grocery Planning Redesign",
+    description:
+      "Designed a high-fidelity mobile case study for Propel that extends the app beyond EBT balance tracking into grocery planning, inventory reminders, and budgeting support.",
+    link: "/projects/propel",
+    skills: ["Figma", "UX Research", "Product Design", "User Flows"],
+    },
+    {
       name: "Behavioral Sequence Prediction",
       description:
         "Built an LSTM model in PyTorch to classify behavioral burst patterns from timestamped datasets. Created a preprocessing pipeline that converted raw event logs into model-ready sequences, then visualized predictions and evaluated model performance to better understand early behavioral signals.",
-      link: "https://github.com/pamelayung",
+      link: "",
       skills: ["Python", "PyTorch", "LSTM", "Time Series"],
     },
     {
       name: "TinyImageNet Image Classifier",
       description:
         "Implemented convolutional neural network models to classify 200 image categories from the TinyImageNet dataset. Improved validation performance through data augmentation, hyperparameter tuning, and model evaluation using accuracy metrics and confusion matrices.",
-      link: "https://github.com/pamelayung",
+      link: "",
       skills: ["Python", "PyTorch", "CNNs", "Computer Vision"],
     },
     {
       name: "Behavioral State Modeling with HMMs",
       description:
         "Applied Hidden Markov Models to large behavioral time-series data to analyze state transitions and identify meaningful behavioral patterns. Built preprocessing workflows and used probabilistic modeling to better understand how behavioral signals change over time.",
-      link: "https://github.com/pamelayung",
+      link: "", 
       skills: ["Python", "hmmlearn", "Time Series", "Probabilistic Modeling"],
     },
     {
@@ -38,13 +45,6 @@ export const siteConfig = {
         "Supported feature and workflow design for organized retail theft detection efforts connected to the Sherlock patrol-support platform. Conducted interviews with agencies, translated operational needs into scalable feature ideas, and supported testing for production deployments.",
       link: "", // 
       skills: ["Figma", "User Research", "Product Thinking", "UAT"],
-    },
-    {
-    name: "Propel Benefits & Grocery Planning Redesign",
-    description:
-      "Designed a high-fidelity mobile case study for Propel that extends the app beyond EBT balance tracking into grocery planning, inventory reminders, and budgeting support.",
-    link: "/projects/propel",
-    skills: ["Figma", "UX Research", "Product Design", "User Flows"],
     },
   ],
   experience: [
