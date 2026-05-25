@@ -89,8 +89,9 @@ export const siteConfig = {
       degree: "Bachelor of Science in Cognitive Science with Specialization in Machine Learning and Neural Computation",
       dateRange: "2023 - 2026",
       achievements: [
-        "3.8 GPA",
-        "President of Triton Robotics",
+        "3.81 GPA",
+        'President of <a href="https://tritonrobotics.org" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">Triton Robotics</a>',
+],",
       ],
     },
   ],
