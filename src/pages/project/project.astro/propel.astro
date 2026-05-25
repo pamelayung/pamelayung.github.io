@@ -1,0 +1,144 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <title>Propel Benefits & Grocery Planning Redesign | Pamela Yung</title>
+    <meta
+      name="description"
+      content="A UX case study redesigning Propel into a benefits and grocery planning tool."
+    />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="mx-auto max-w-5xl px-6 py-16">
+      <a href="/" class="text-sm text-blue-700 hover:underline">← Back to home</a>
+
+      <section class="mt-10">
+        <p class="text-sm font-medium text-blue-700">UX Case Study</p>
+
+        <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+          Propel Benefits & Grocery Planning Redesign
+        </h1>
+
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-gray-600">
+          I redesigned Propel into a benefits and grocery planning tool that helps users track their EBT balance,
+          understand upcoming deposits, monitor grocery inventory, reduce food waste, and make more informed spending decisions.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">Figma</span>
+          <span class="rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">UX Research</span>
+          <span class="rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">Product Design</span>
+          <span class="rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">User Flows</span>
+        </div>
+
+        <img
+          src="/images/propel/hero.png"
+          alt="Propel app redesign screens"
+          class="mt-10 w-full rounded-2xl border border-gray-200 shadow-sm"
+        />
+      </section>
+
+      <section class="mt-20">
+        <h2 class="text-2xl font-semibold text-gray-900">Overview</h2>
+        <p class="mt-4 leading-8 text-gray-600">
+          Propel helps users manage benefits-related information, including EBT balance tracking and support resources.
+          For this redesign, I focused on connecting benefits, grocery inventory, and budgeting so users could make
+          better decisions around food and spending.
+        </p>
+      </section>
+
+      <section class="mt-20">
+        <h2 class="text-2xl font-semibold text-gray-900">Problem</h2>
+        <div class="mt-6 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+          <p class="text-lg font-semibold leading-8 text-gray-900">
+            How might we help Propel users connect their benefits, grocery inventory, and spending habits so they can
+            make more informed food and budgeting decisions?
+          </p>
+        </div>
+      </section>
+
+      <section class="mt-20">
+        <h2 class="text-2xl font-semibold text-gray-900">User Research</h2>
+        <p class="mt-4 leading-8 text-gray-600">
+          Our research showed that users need more than a balance number. They need to understand what food they already
+          have, what may expire soon, when their next deposit is coming, and how their spending affects future grocery decisions.
+        </p>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <img
+            src="/images/propel/user-flow-1.png"
+            alt="Propel user flow 1"
+            class="rounded-2xl border border-gray-200 shadow-sm"
+          />
+
+          <img
+            src="/images/propel/user-flow-2.png"
+            alt="Propel user flow 2"
+            class="rounded-2xl border border-gray-200 shadow-sm"
+          />
+        </div>
+      </section>
+
+      <section class="mt-20">
+        <h2 class="text-2xl font-semibold text-gray-900">Final Prototype</h2>
+        <p class="mt-4 leading-8 text-gray-600">
+          The final prototype focuses on three connected areas: benefits tracking, grocery inventory, and budgeting support.
+        </p>
+
+        <div class="mt-10 grid gap-8 md:grid-cols-2">
+          <figure class="rounded-2xl border border-gray-200 p-4 shadow-sm">
+            <img
+              src="/images/propel/home-dashboard.png"
+              alt="Propel home dashboard"
+              class="mx-auto rounded-xl"
+            />
+            <figcaption class="mt-4 text-sm leading-6 text-gray-600">
+              The home dashboard gives users a quick view of their EBT balance, recent spending, next deposit timeline, and grocery reminders.
+            </figcaption>
+          </figure>
+
+          <figure class="rounded-2xl border border-gray-200 p-4 shadow-sm">
+            <img
+              src="/images/propel/spending-breakdown-chart.png"
+              alt="Propel spending breakdown"
+              class="mx-auto rounded-xl"
+            />
+            <figcaption class="mt-4 text-sm leading-6 text-gray-600">
+              The spending breakdown helps users understand where their benefits are going across stores and categories.
+            </figcaption>
+          </figure>
+
+          <figure class="rounded-2xl border border-gray-200 p-4 shadow-sm">
+            <img
+              src="/images/propel/inventory-overview.png"
+              alt="Propel inventory overview"
+              class="mx-auto rounded-xl"
+            />
+            <figcaption class="mt-4 text-sm leading-6 text-gray-600">
+              The inventory overview helps users track what food they already have at home and what should be used soon.
+            </figcaption>
+          </figure>
+
+          <figure class="rounded-2xl border border-gray-200 p-4 shadow-sm">
+            <img
+              src="/images/propel/grocery-planner.png"
+              alt="Propel grocery planner"
+              class="mx-auto rounded-xl"
+            />
+            <figcaption class="mt-4 text-sm leading-6 text-gray-600">
+              The grocery planner supports future shopping decisions by connecting planned purchases with inventory and price information.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
