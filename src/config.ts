@@ -91,7 +91,6 @@ export const siteConfig = {
       achievements: [
         "3.81 GPA",
         'President of <a href="https://tritonrobotics.org" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">Triton Robotics</a>',
-],",
       ],
     },
   ],
