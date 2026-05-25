@@ -2,6 +2,84 @@
 import { siteConfig } from "../../config";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+
+const accent = siteConfig.accentColor || "#1d4ed8";
+
+const sections = [
+  {
+    number: "01",
+    title: "Overview",
+    body: [
+      "Propel helps users manage benefits-related information, including EBT balance tracking and support resources. For this redesign, I focused on connecting benefits, grocery inventory, and budgeting so users could make clearer decisions around food and spending.",
+      "My role included contributing to user research, identifying user needs, mapping user flows, and creating high-fidelity prototype screens that communicate the redesigned experience.",
+    ],
+  },
+  {
+    number: "02",
+    title: "Problem",
+    body: [
+      "People who rely on EBT benefits often need to make careful decisions around grocery spending, food inventory, and upcoming deposits. However, checking a balance alone does not always help users understand what they already have at home, what food may expire soon, or how to plan purchases around their remaining benefits.",
+    ],
+    callout:
+      "How might we help Propel users connect their benefits, grocery inventory, and spending habits so they can make more informed food and budgeting decisions?",
+  },
+  {
+    number: "03",
+    title: "User Research",
+    body: [
+      "Our research showed that users need more than a balance number. They need to understand what food they already have, what may expire soon, when their next deposit is coming, and how their spending affects future grocery decisions.",
+    ],
+  },
+];
+
+const insights = [
+  [
+    "Quick access matters",
+    "Users need balance, deposit, and spending information upfront.",
+  ],
+  [
+    "Food planning is connected",
+    "Grocery inventory and benefits planning should not feel separate.",
+  ],
+  [
+    "Reminders reduce waste",
+    "Expiration and quantity prompts help users use what they already have.",
+  ],
+];
+
+const userFlows = [
+  [
+    "/images/propel/user-flow-1.png",
+    "User Flow 1 maps how users move from checking benefit status to finding relevant support.",
+  ],
+  [
+    "/images/propel/user-flow-2.png",
+    "User Flow 2 maps how users discover grocery savings, inventory tools, and planning features.",
+  ],
+];
+
+const prototypeScreens = [
+  [
+    "/images/propel/home-dashboard.png",
+    "Home dashboard",
+    "Quick view of EBT balance, spending, deposit timeline, and grocery reminders.",
+  ],
+  [
+    "/images/propel/spending-breakdown-chart.png",
+    "Spending breakdown",
+    "Helps users understand where their benefits are going across stores and categories.",
+  ],
+  [
+    "/images/propel/inventory-overview.png",
+    "Inventory overview",
+    "Helps users track food they already have and what should be used soon.",
+  ],
+  [
+    "/images/propel/grocery-planner.png",
+    "Grocery planner",
+    "Connects planned purchases with inventory and price information.",
+  ],
+];
 ---
 
 <html lang="en">
@@ -18,255 +96,252 @@ import Footer from "../../components/Footer.astro";
 
     <main>
       <!-- HERO -->
-      <section class="min-h-screen p-8 sm:p-12 md:p-16 lg:p-24 flex items-center">
-        <div class="w-full">
-          <a
-            href="/"
-            class="inline-block text-sm sm:text-base font-mono text-gray-600 hover:text-gray-900 transition"
-          >
-            ← Back to Home
-          </a>
+      <section
+        id="hero"
+        class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
+        style={`--accent-color: ${accent}`}
+      >
+        <!-- Gradient overlay like Ryan's theme -->
+        <div
+          class="absolute inset-0 -z-10"
+          style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${accent}40 0%, ${accent}25 20%, ${accent}10 40%, rgba(255, 255, 255, 0.3) 70%, rgba(255, 255, 255, 0.8) 90%, white 100%)`}
+        />
 
-          <div class="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div class="lg:col-span-12">
-              <p
-                class="text-sm sm:text-base font-mono mb-6"
-                style={`color: ${siteConfig.accentColor}`}
-              >
-                UX CASE STUDY / PRODUCT DESIGN / FIGMA
-              </p>
+        <!-- Subtle decorative grid -->
+        <svg
+          aria-hidden="true"
+          class="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        >
+          <defs>
+            <pattern
+              id="grid"
+              width="80"
+              height="80"
+              x="50%"
+              y="-1"
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M.5 80V.5H80" fill="none"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" stroke-width="0" fill="url(#grid)"></rect>
+        </svg>
 
-              <h1 class="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight text-gray-900">
-                Propel Benefits
-                <br />
-                <span style={`color: ${siteConfig.accentColor}`}>
-                  & Grocery Planning
+        <div class="h-full max-w-7xl mx-auto p-8 sm:p-12 md:p-24 flex items-center">
+          <div class="max-w-6xl">
+            <a
+              href="/"
+              class="inline-block mb-14 font-mono text-sm text-gray-600 hover:text-gray-900 transition"
+            >
+              ← Back to Home
+            </a>
+
+            <p
+              class="font-mono text-sm sm:text-base mb-6 tracking-wide"
+              style={`color: ${accent}`}
+            >
+              UX CASE STUDY / PRODUCT DESIGN / FIGMA
+            </p>
+
+            <h1
+              class="text-5xl sm:text-6xl md:text-8xl xl:text-9xl font-bold leading-[0.9] tracking-tight text-gray-900"
+            >
+              Propel Benefits
+              <br />
+              <span style={`color: ${accent}`}>
+                & Grocery Planning
+              </span>
+              <br />
+              Redesign
+            </h1>
+
+            <p
+              class="mt-10 max-w-4xl text-lg sm:text-xl md:text-2xl font-mono leading-relaxed text-gray-600"
+            >
+              I redesigned Propel into a benefits and grocery planning tool that helps users track EBT balance,
+              monitor grocery inventory, reduce food waste, and make more informed spending decisions.
+            </p>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+              {["Figma", "UX Research", "Product Design", "User Flows"].map((tag) => (
+                <span class="px-4 py-2 bg-white/80 border border-gray-200 text-gray-700 rounded-lg text-sm font-mono shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-md">
+                  {tag}
                 </span>
-                <br />
-                Redesign
-              </h1>
-
-              <p class="mt-10 max-w-4xl text-xl sm:text-2xl font-mono leading-relaxed text-gray-600">
-                I redesigned Propel into a benefits and grocery planning tool that helps users track EBT balance,
-                monitor grocery inventory, reduce food waste, and make more informed spending decisions.
-              </p>
-
-              <div class="mt-10 flex flex-wrap gap-2">
-                <span class="px-3 py-1.5 bg-gray-900 text-white rounded-lg text-sm font-medium">Figma</span>
-                <span class="px-3 py-1.5 bg-gray-900 text-white rounded-lg text-sm font-medium">UX Research</span>
-                <span class="px-3 py-1.5 bg-gray-900 text-white rounded-lg text-sm font-medium">Product Design</span>
-                <span class="px-3 py-1.5 bg-gray-900 text-white rounded-lg text-sm font-medium">User Flows</span>
-              </div>
+              ))}
             </div>
           </div>
+        </div>
+
+        <div
+          class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in"
+        >
+          <a href="#overview" class="font-mono text-sm hover:text-gray-900 transition">
+            Overview
+          </a>
+          <a href="#research" class="font-mono text-sm hover:text-gray-900 transition">
+            Research
+          </a>
+          <a href="#prototype" class="font-mono text-sm hover:text-gray-900 transition">
+            Prototype
+          </a>
+          <a href="#reflection" class="font-mono text-sm hover:text-gray-900 transition">
+            Reflection
+          </a>
         </div>
       </section>
 
       <!-- HERO IMAGE -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24 pt-0">
-        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm">
+      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
+        <div class="max-w-6xl mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1">
           <img
             src="/images/propel/hero.png"
             alt="Propel app redesign screens"
-            class="w-full rounded-xl border border-gray-200"
+            class="w-full max-w-5xl mx-auto rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-[1.01]"
           />
         </div>
       </section>
 
-      <!-- OVERVIEW -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>01</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
-              Overview
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
+      <!-- CONTENT SECTIONS -->
+      {
+        sections.map((section) => (
+          <section
+            id={section.title === "Overview" ? "overview" : section.title === "User Research" ? "research" : undefined}
+            class="p-8 sm:p-12 md:p-16 lg:p-24"
+          >
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+              <div class="lg:col-span-4">
+                <p class="font-mono text-sm" style={`color: ${accent}`}>
+                  {section.number}
+                </p>
 
-          <div class="lg:col-span-8">
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8">
-              <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-                Propel helps users manage benefits-related information, including EBT balance tracking and support resources.
-                For this redesign, I focused on connecting benefits, grocery inventory, and budgeting so users could make
-                clearer decisions around food and spending.
-              </p>
+                <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
+                  {section.title}
+                </h2>
 
-              <p class="mt-6 text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-                My role included contributing to user research, identifying user needs, mapping user flows, and creating
-                high-fidelity prototype screens that communicate the redesigned experience.
-              </p>
+                <div
+                  class="w-[75px] h-[5px] mt-4 rounded-full"
+                  style={`background-color: ${accent}`}
+                />
+              </div>
+
+              <div class="lg:col-span-8 space-y-6">
+                {section.body.map((paragraph) => (
+                  <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
+                    {paragraph}
+                  </p>
+                ))}
+
+                {section.callout && (
+                  <div class="bg-gray-900 text-white rounded-2xl p-6 sm:p-8 mt-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <p class="text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed">
+                      {section.callout}
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        ))
+      }
 
-      <!-- PROBLEM -->
+      <!-- INSIGHTS -->
       <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>02</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
-              Problem
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8 space-y-6">
-            <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-              People who rely on EBT benefits often need to make careful decisions around grocery spending,
-              food inventory, and upcoming deposits. However, checking a balance alone does not always help users
-              understand what they already have at home, what food may expire soon, or how to plan purchases around
-              their remaining benefits.
+            <p class="font-mono text-sm" style={`color: ${accent}`}>
+              04
             </p>
 
-            <div class="bg-gray-900 text-white rounded-2xl p-6 sm:p-8">
-              <p class="text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed">
-                How might we help Propel users connect their benefits, grocery inventory, and spending habits so they can make more informed food and budgeting decisions?
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- USER RESEARCH -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>03</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
-              User Research
+            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
+              Insights
             </h2>
+
             <div
               class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
+              style={`background-color: ${accent}`}
             />
           </div>
 
-          <div class="lg:col-span-8">
-            <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-              Our research showed that users need more than a balance number. They need to understand what food they
-              already have, what may expire soon, when their next deposit is coming, and how their spending affects
-              future grocery decisions.
-            </p>
+          <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {insights.map(([title, text], index) => (
+              <div class="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <p class="font-mono text-sm" style={`color: ${accent}`}>
+                  INSIGHT 0{index + 1}
+                </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>INSIGHT 01</p>
-                <h3 class="mt-3 text-xl font-bold text-gray-900">Quick access matters</h3>
-                <p class="mt-3 text-gray-600 font-mono leading-relaxed">
-                  Users need balance, deposit, and spending information upfront.
+                <h3 class="mt-4 text-xl font-bold group-hover:translate-x-1 transition-transform duration-300">
+                  {title}
+                </h3>
+
+                <p class="mt-3 font-mono text-gray-600 leading-relaxed">
+                  {text}
                 </p>
               </div>
-
-              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>INSIGHT 02</p>
-                <h3 class="mt-3 text-xl font-bold text-gray-900">Food planning is connected</h3>
-                <p class="mt-3 text-gray-600 font-mono leading-relaxed">
-                  Grocery inventory and benefits planning should not feel separate.
-                </p>
-              </div>
-
-              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>INSIGHT 03</p>
-                <h3 class="mt-3 text-xl font-bold text-gray-900">Reminders reduce waste</h3>
-                <p class="mt-3 text-gray-600 font-mono leading-relaxed">
-                  Expiration and quantity prompts help users use what they already have.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <!-- USER FLOWS -->
       <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>04</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
+            <p class="font-mono text-sm" style={`color: ${accent}`}>
+              05
+            </p>
+
+            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
               User Flows
             </h2>
+
             <div
               class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
+              style={`background-color: ${accent}`}
             />
           </div>
 
           <div class="lg:col-span-8 space-y-8">
-            <figure class="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6">
-              <img
-                src="/images/propel/user-flow-1.png"
-                alt="Propel user flow 1"
-                class="w-full rounded-xl border border-gray-200"
-              />
-              <figcaption class="mt-4 text-sm font-mono text-gray-600 leading-relaxed">
-                User Flow 1 maps how users move from checking benefit status to finding relevant support.
-              </figcaption>
-            </figure>
+            {userFlows.map(([src, caption]) => (
+              <figure class="group bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
+                  <img
+                    src={src}
+                    alt={caption}
+                    class="w-full max-h-[380px] object-contain rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
 
-            <figure class="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6">
-              <img
-                src="/images/propel/user-flow-2.png"
-                alt="Propel user flow 2"
-                class="w-full rounded-xl border border-gray-200"
-              />
-              <figcaption class="mt-4 text-sm font-mono text-gray-600 leading-relaxed">
-                User Flow 2 maps how users discover grocery savings, inventory tools, and planning features.
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
+                <figcaption class="mt-4 text-sm font-mono text-gray-600 leading-relaxed">
+                  {caption}
+                </figcaption>
 
-      <!-- DESIGN DIRECTION -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>05</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
-              Design Direction
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
-
-          <div class="lg:col-span-8">
-            <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-              I wanted the visual design to feel clear, friendly, and supportive. Since the app deals with financial
-              benefits and food access, the interface needed to feel trustworthy without feeling cold or overly formal.
-            </p>
-
-            <div class="mt-10 bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6">
-              <img
-                src="/images/propel/style-guide.png"
-                alt="Propel design system"
-                class="w-full rounded-xl border border-gray-200"
-              />
-            </div>
+                <p
+                  class="mt-3 font-mono text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  style={`color: ${accent}`}
+                >
+                  Explore flow →
+                </p>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
       <!-- FINAL PROTOTYPE -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+      <section id="prototype" class="p-8 sm:p-12 md:p-16 lg:p-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>06</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
+            <p class="font-mono text-sm" style={`color: ${accent}`}>
+              06
+            </p>
+
+            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
               Final Prototype
             </h2>
+
             <div
               class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
+              style={`background-color: ${accent}`}
             />
           </div>
 
@@ -277,81 +352,64 @@ import Footer from "../../components/Footer.astro";
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-              <figure class="group bg-gray-50 border border-gray-200 rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1">
-                <img
-                  src="/images/propel/home-dashboard.png"
-                  alt="Propel home dashboard"
-                  class="mx-auto rounded-xl border border-gray-200"
-                />
-                <figcaption class="mt-5 text-sm font-mono text-gray-600 leading-relaxed">
-                  The home dashboard gives users a quick view of their EBT balance, recent spending, next deposit timeline, and grocery reminders.
-                </figcaption>
-              </figure>
+              {prototypeScreens.map(([src, alt, caption]) => (
+                <figure class="group bg-white border border-gray-200 rounded-2xl p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+                  <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-gray-50 py-6">
+                    <img
+                      src={src}
+                      alt={alt}
+                      class="mx-auto w-full max-w-[245px] rounded-xl transition-transform duration-300 group-hover:scale-105"
+                    />
 
-              <figure class="group bg-gray-50 border border-gray-200 rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1">
-                <img
-                  src="/images/propel/spending-breakdown-chart.png"
-                  alt="Propel spending breakdown"
-                  class="mx-auto rounded-xl border border-gray-200"
-                />
-                <figcaption class="mt-5 text-sm font-mono text-gray-600 leading-relaxed">
-                  The spending breakdown helps users understand where their benefits are going across stores and categories.
-                </figcaption>
-              </figure>
+                    <div class="absolute inset-0 bg-gray-900/0 group-hover:bg-gray-900/5 transition duration-300"></div>
+                  </div>
 
-              <figure class="group bg-gray-50 border border-gray-200 rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1">
-                <img
-                  src="/images/propel/inventory-overview.png"
-                  alt="Propel inventory overview"
-                  class="mx-auto rounded-xl border border-gray-200"
-                />
-                <figcaption class="mt-5 text-sm font-mono text-gray-600 leading-relaxed">
-                  The inventory overview helps users track what food they already have at home and what should be used soon.
-                </figcaption>
-              </figure>
+                  <figcaption class="mt-5 text-sm font-mono text-gray-600 leading-relaxed">
+                    {caption}
+                  </figcaption>
 
-              <figure class="group bg-gray-50 border border-gray-200 rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-xl hover:border-gray-300 hover:-translate-y-1">
-                <img
-                  src="/images/propel/grocery-planner.png"
-                  alt="Propel grocery planner"
-                  class="mx-auto rounded-xl border border-gray-200"
-                />
-                <figcaption class="mt-5 text-sm font-mono text-gray-600 leading-relaxed">
-                  The grocery planner supports future shopping decisions by connecting planned purchases with inventory and price information.
-                </figcaption>
-              </figure>
+                  <p
+                    class="mt-4 font-mono text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                    style={`color: ${accent}`}
+                  >
+                    View screen →
+                  </p>
+                </figure>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       <!-- REFLECTION -->
-      <section class="p-8 sm:p-12 md:p-16 lg:p-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+      <section id="reflection" class="p-8 sm:p-12 md:p-16 lg:p-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           <div class="lg:col-span-4">
-            <p class="text-sm font-mono" style={`color: ${siteConfig.accentColor}`}>07</p>
-            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
+            <p class="font-mono text-sm" style={`color: ${accent}`}>
+              07
+            </p>
+
+            <h2 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold">
               Reflection
             </h2>
+
             <div
               class="w-[75px] h-[5px] mt-4 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
+              style={`background-color: ${accent}`}
             />
           </div>
 
-          <div class="lg:col-span-8">
-            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8">
-              <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-                This project helped me think more intentionally about how product design can reduce cognitive load.
-                Benefits information can easily become overwhelming, so I focused on designing screens that help users
-                quickly understand what matters and what they can do next.
-              </p>
+          <div class="lg:col-span-8 bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <p class="text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
+              This project helped me think more intentionally about how product design can reduce cognitive load.
+              Benefits information can easily become overwhelming, so I focused on designing screens that help users
+              quickly understand what matters and what they can do next.
+            </p>
 
-              <p class="mt-6 text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
-                If I continued this project, I would test the prototype with users to understand whether the dashboard,
-                grocery inventory, and budgeting tools feel clear and useful in real situations.
-              </p>
-            </div>
+            <p class="mt-6 text-lg sm:text-xl font-mono leading-relaxed text-gray-600">
+              If I continued this project, I would test the prototype with users to understand whether the dashboard,
+              grocery inventory, and budgeting tools feel clear and useful in real situations.
+            </p>
           </div>
         </div>
       </section>
