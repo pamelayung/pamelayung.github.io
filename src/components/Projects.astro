@@ -22,11 +22,18 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
             <div class="space-y-8">
               {siteConfig.projects.map((project, index) => {
                 const Component = project.link ? "a" : "div";
+                const isExternalLink =
+                  project.link?.startsWith("http://") || project.link?.startsWith("https://");
+
                 const linkProps = project.link
                   ? {
                       href: project.link,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
+                      ...(isExternalLink
+                        ? {
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                          }
+                        : {}),
                     }
                   : {};
 
