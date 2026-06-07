@@ -46,24 +46,24 @@ const userFlows = [
 
 const prototypeScreens = [
   [
-    "/images/propel/home-dashboard.png",
+    "/images/propel/home-dashboard-phone.png",
     "Home dashboard",
     "Quick view of EBT balance, spending, deposit timeline, and grocery reminders.",
   ],
   [
-    "/images/propel/spending-breakdown-chart.png",
+    "/images/propel/spending-breakdown-phone.png",
     "Spending breakdown",
-    "Helps users understand where their benefits are going across stores and categories.",
+    "Shows remaining balance, recent spending, and top spending categories.",
   ],
   [
-    "/images/propel/inventory-overview.png",
+    "/images/propel/receipt-detail-phone.png",
+    "Receipt detail",
+    "Lets users review receipt-level details without leaving the spending breakdown.",
+  ],
+  [
+    "/images/propel/inventory-overview-phone.png",
     "Inventory overview",
-    "Helps users track food they already have and what should be used soon.",
-  ],
-  [
-    "/images/propel/grocery-planner.png",
-    "Grocery planner",
-    "Connects planned purchases with inventory and price information.",
+    "Helps users track grocery categories, food quantity, and items expiring soon.",
   ],
 ];
 
@@ -387,29 +387,29 @@ const beforeAfterStories = [
 
               <div class="mt-10">
                 <p class="max-w-4xl font-mono text-lg leading-relaxed text-gray-600">
-                  The final prototype focuses on three connected areas: benefits tracking, grocery inventory,
-                  and budgeting support.
+                  The final prototype focuses on four key screens that connect benefits tracking,
+                  spending visibility, receipt review, and grocery inventory management.
                 </p>
 
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
                   {prototypeScreens.map(([src, alt, caption]) => (
                     <figure
-                      class="group rounded-3xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-zoom-in"
+                      class="group rounded-3xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-zoom-in"
                       data-expandable
                       data-src={src}
                       data-alt={alt}
                     >
-                      <div class="relative rounded-2xl border border-gray-200 bg-gray-50 px-4 py-8 overflow-hidden">
+                      <div class="relative bg-transparent p-0 overflow-hidden min-h-[420px] flex items-center justify-center">
                         <img
                           src={src}
                           alt={alt}
-                          class="mx-auto w-full max-w-[120px] rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-105 pointer-events-none"
+                          class="mx-auto h-[360px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 pointer-events-none"
                         />
 
                         <div class="absolute inset-0 bg-gray-950/0 transition group-hover:bg-gray-950/[0.03]"></div>
                       </div>
 
-                      <figcaption class="mt-4 font-mono text-xs leading-relaxed text-gray-600">
+                      <figcaption class="mt-4 font-mono text-sm leading-relaxed text-gray-600">
                         {caption}
                       </figcaption>
 
@@ -566,7 +566,7 @@ const beforeAfterStories = [
         id="lightbox-image"
         src=""
         alt=""
-        class="max-h-[85vh] max-w-[90vw] rounded-2xl bg-white object-contain shadow-2xl"
+        class="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl"
       />
     </div>
 
