@@ -19,6 +19,13 @@ export const siteConfig = {
     skills: ["Figma", "UX Research", "Product Design", "User Flows"],
     },
     {
+      name: "Retail Theft Workflow Support",
+      description:
+        "Supported feature and workflow design for organized retail theft detection efforts connected to the Sherlock patrol-support platform. Conducted interviews with agencies, translated operational needs into scalable feature ideas, and supported testing for production deployments.",
+      link: "", // 
+      skills: ["Figma", "User Research", "Product Thinking", "UAT"],
+    },
+    {
       name: "Behavioral Sequence Prediction",
       description:
         "Built an LSTM model in PyTorch to classify behavioral burst patterns from timestamped datasets. Created a preprocessing pipeline that converted raw event logs into model-ready sequences, then visualized predictions and evaluated model performance to better understand early behavioral signals.",
@@ -38,13 +45,6 @@ export const siteConfig = {
         "Applied Hidden Markov Models to large behavioral time-series data to analyze state transitions and identify meaningful behavioral patterns. Built preprocessing workflows and used probabilistic modeling to better understand how behavioral signals change over time.",
       link: "", 
       skills: ["Python", "hmmlearn", "Time Series", "Probabilistic Modeling"],
-    },
-    {
-      name: "Retail Theft Workflow Support",
-      description:
-        "Supported feature and workflow design for organized retail theft detection efforts connected to the Sherlock patrol-support platform. Conducted interviews with agencies, translated operational needs into scalable feature ideas, and supported testing for production deployments.",
-      link: "", // 
-      skills: ["Figma", "User Research", "Product Thinking", "UAT"],
     },
   ],
   experience: [
