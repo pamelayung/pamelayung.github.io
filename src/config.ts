@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Pamela Yung",
-  title: "Transforming data into better decisions",
+  title: "Making it happen with data.",
   description: "Portfolio website of Pamela Yung",
   accentColor: "#1d4ed8",
   social: {
@@ -9,7 +9,7 @@ export const siteConfig = {
     github: "https://github.com/pamelayung",
   },
   aboutMe:
-    "Hi, I’m Pamela Yung. I’m a Cognitive Science student at UC San Diego specializing in Machine Learning and Neural Computation. I enjoy building projects that connect data, modeling, and real-world systems, whether that means training machine learning models, analyzing behavioral time-series data, or leading interdisciplinary teams through Triton Robotics",
+    "Hi, I’m Pamela Yung. I’m a recent Cognitive Science graduate at UC San Diego who specialized in Machine Learning and Neural Computation. I enjoy building projects that connect data, modeling, and real-world systems, whether that means training machine learning models, analyzing behavioral time-series data, or leading interdisciplinary teams through Triton Robotics",
   projects: [
     {
     name: "Propel Benefits & Grocery Planning Redesign",
@@ -60,9 +60,20 @@ export const siteConfig = {
       ],
     },
     {
+      company: "Ernst & Young (EY)",
+      title: "Technology Risk Assurance Intern",
+      dateRange: "June 2026 - August 2026",
+      bullets: [
+        "Supported client IT risk engagements through process documentation, evidence review, walkthroughs, and ITGC/ITAC testing.",
+        "Designed innovative presentation materials that improve how technology risk findings and recommendations are communicated to clients.",
+        "Helped test new features before release by identifying bugs and validating fixes.",
+        "Evaluated technology risks, documenting key controls, and supporting SOX and financial statement audit procedures for fintech and robotics clients.",
+      ],
+    },
+    {
       company: "UC San Diego Health — Center for Bleeding and Clotting Disorders",
       title: "Finance and Research Administrative Assistant",
-      dateRange: "Apr 2024 - Present",
+      dateRange: "April 2024 - June 2026",
       bullets: [
         "Managed over $10M in grant and clinical trial budgets using Oracle systems.",
         "Built Excel dashboards to track spending and forecast costs, helping reduce expenses by about 30%.",
@@ -87,7 +98,7 @@ export const siteConfig = {
     {
       school: "University of California - San Diego",
       degree: "Bachelor of Science in Cognitive Science with Specialization in Machine Learning and Neural Computation",
-      dateRange: "2023 - 2026",
+      dateRange: "Sept 2023 - June 2026",
       achievements: [
         "3.81 GPA",
         'President of <a href="https://tritonrobotics.org" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">Triton Robotics</a>',

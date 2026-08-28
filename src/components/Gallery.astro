@@ -1,0 +1,458 @@
+---
+const categories = [
+  "All",
+  "UCSD Triton Robotics",
+  "San Mateo County Sheriff's Office",
+  "EY",
+  "UC San Diego",
+  "Other"
+];
+
+const photos = [
+  // =========================
+  // EXPERIENCE — UCSD TRITON ROBOTICS
+  // =========================
+  {
+    src: "/images/pictures/robotics-1.jpg",
+    alt: "Triton Robotics competition",
+    title: "2025 Robots in Front of Geisel Library",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-2.jpg",
+    alt: "Triton Robotics team",
+    title: "2025 Robotics Competition @ UCSD",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-3.jpg",
+    alt: "Robotics event",
+    title: "2026 Robotics Competition @ Purdue University",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-4.jpg",
+    alt: "Robotics event",
+    title: "2026 Robots in 3v3 Match",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-5.jpg",
+    alt: "Robotics event",
+    title: "2025 Outreach ELem. School",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-6.jpg",
+    alt: "Robotics event",
+    title: "2025 Triton Day Tabling",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-7.jpg",
+    alt: "Robotics event",
+    title: "UCSD Triton Robotics Featured on Fox5 Morning News",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-8.jpg",
+    alt: "Robotics event",
+    title: "UCSD Triton Robotics Featured on Fox5 Morning News P2",
+    category: "UCSD Triton Robotics",
+  },
+  {
+    src: "/images/pictures/robotics-9.jpg",
+    alt: "Robotics event",
+    title: "UCSD Triton Robotics Graduating Seniors",
+    category: "UCSD Triton Robotics",
+  },
+
+  // =====================================
+  // EXPERIENCE — SAN MATEO COUNTY SHERIFF
+  // =====================================
+  {
+    src: "/images/pictures/sheriff-1.jpg",
+    alt: "San Mateo County Sheriff's Office",
+    title: "Flying Drones",
+    category: "San Mateo County Sheriff's Office",
+  },
+
+  // =========================
+  // EXPERIENCE — EY
+  // =========================
+  {
+    src: "/images/pictures/ey-1.jpeg",
+    alt: "EY internship",
+    title: "National Intern Day 2026 Celebration ",
+    category: "EY",
+  },
+  {
+    src: "/images/pictures/ey-2.jpeg",
+    alt: "EY internship",
+    title: "Last Day EY",
+    category: "EY",
+  },
+  {
+    src: "/images/pictures/ey-3.jpeg",
+    alt: "EY internship",
+    title: "Last Day EY P2",
+    category: "EY",
+  },
+
+  // =========================
+  // EXPERIENCE — UC SAN DIEGO
+  // =========================
+  {
+    src: "/images/pictures/eye-2.jpeg",
+    alt: "UC San Diego campus",
+    title: "Eye Tracking Research",
+    category: "UC San Diego",
+  },
+
+  // =========================
+  // PERSONAL — OTHER
+  // =========================
+  {
+    src: "/images/pictures/personal-1.jpeg",
+    alt: "Personal photography",
+    title: "2025 DC",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-2.jpeg",
+    alt: "Personal photography",
+    title: "Point Reyes",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-3.jpeg",
+    alt: "Personal photography",
+    title: "Exploring the City!",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-4.jpeg",
+    alt: "Personal photography",
+    title: "Exploring the City P2!",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-5.jpeg",
+    alt: "Personal photography",
+    title: "Golden Gate Bridge",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-6.jpeg",
+    alt: "Personal photography",
+    title: "Geisel Library",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-7.jpeg",
+    alt: "Personal photography",
+    title: "2026 Hong Kong",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-8.jpeg",
+    alt: "Personal photography",
+    title: "Baking Sourdough Bread",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-10.jpeg",
+    alt: "Personal photography",
+    title: "Skiing in Canada",
+    category: "Other",
+  },
+  {
+    src: "/images/pictures/personal-11.jpeg",
+    alt: "Personal photography",
+    title: "Hitting the Greens!",
+    category: "Other",
+  },
+];
+---
+
+<section id="gallery" class="px-8 sm:px-12 md:px-16 lg:px-24 py-24">
+
+  <div>
+    <!-- HEADER -->
+    <div class="mb-12">
+
+        <h2 class="text-4xl md:text-6xl font-bold text-gray-900">
+            Gallery
+        </h2>
+
+        <div class="w-[75px] h-[5px] mt-2 rounded-full bg-blue-600"></div>
+
+        <p class="mt-4 text-lg text-gray-600 font-mono lg:whitespace-nowrap">
+        A visual collection of the experiences, projects, and interests that have shaped my work.
+        </p>
+    </div>
+
+
+    <!-- EXPERIENCE -->
+    <div class="mb-6">
+
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+        Experience
+      </h3>
+
+      <p class="mt-2 text-gray-600 font-mono text-sm">
+        The teams, projects, and experiences behind my work.
+      </p>
+
+    </div>
+
+
+    <!-- CATEGORY FILTERS -->
+    <div class="flex flex-wrap gap-3 mb-10">
+
+      {categories.map((category, index) => (
+        <button
+          class={`gallery-filter px-4 py-2 rounded-lg font-mono text-sm border transition ${
+            index === 0
+              ? "bg-gray-900 text-white border-gray-900"
+              : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+          }`}
+          data-category={category}
+        >
+          {category}
+        </button>
+      ))}
+
+    </div>
+
+
+    <!-- PHOTO GRID -->
+    <div
+      id="gallery-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+
+      {photos
+        .filter((photo) =>
+        ["UCSD Triton Robotics", "San Mateo County Sheriff's Office", "EY", "UC San Diego"]
+            .includes(photo.category)
+        )
+        .map((photo) => (
+        <div
+            class="gallery-item group overflow-hidden rounded-2xl border border-gray-200 bg-white"
+            data-category={photo.category}
+            data-type="Experience"
+        >
+
+          <div class="aspect-[4/3] overflow-hidden">
+
+            <button
+            class="w-full h-full cursor-zoom-in"
+            data-lightbox-src={photo.src}
+            data-lightbox-alt={photo.alt}
+            >
+            <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+            />
+            </button>
+          </div>
+
+
+          <div class="p-5">
+
+            <p class="font-mono text-sm text-gray-900 font-semibold">
+              {photo.title}
+            </p>
+
+            <p class="text-xs text-gray-400 mt-1 font-mono">
+              {photo.category}
+            </p>
+
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+
+    <!-- PERSONAL -->
+    <div class="mt-24 mb-6">
+
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+        Personal
+      </h3>
+
+      <p class="mt-2 text-gray-600 font-mono text-sm">
+        Things I enjoy outside of work and school.
+      </p>
+
+    </div>
+
+
+    <!-- PERSONAL PHOTO GRID -->
+    <div
+      id="personal-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+
+      {photos
+        .filter((photo) =>
+          ["Photography", "Travel", "Other"].includes(photo.category)
+        )
+        .map((photo) => (
+          <div class="group overflow-hidden rounded-2xl border border-gray-200 bg-white">
+
+            <div class="aspect-[4/3] overflow-hidden">
+
+            <button
+                class="w-full h-full cursor-zoom-in"
+                data-lightbox-src={photo.src}
+                data-lightbox-alt={photo.alt}
+                >
+                <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                </button>
+
+            </div>
+
+            <div class="p-5">
+
+              <p class="font-mono text-sm text-gray-900 font-semibold">
+                {photo.title}
+              </p>
+
+              <p class="text-xs text-gray-400 mt-1 font-mono">
+                {photo.category}
+              </p>
+
+            </div>
+
+          </div>
+        ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+  const buttons = document.querySelectorAll(".gallery-filter");
+  const items = document.querySelectorAll("#gallery-grid .gallery-item");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+
+      const category = button.getAttribute("data-category");
+
+      // Reset all buttons
+      buttons.forEach((btn) => {
+        btn.classList.remove("bg-gray-900", "text-white", "border-gray-900");
+        btn.classList.add("bg-white", "text-gray-700", "border-gray-300");
+      });
+
+      // Highlight selected button
+      button.classList.remove(
+        "bg-white",
+        "text-gray-700",
+        "border-gray-300"
+      );
+
+      button.classList.add(
+        "bg-gray-900",
+        "text-white",
+        "border-gray-900"
+      );
+
+      // Filter experience photos
+      items.forEach((item) => {
+
+        const itemCategory = item.getAttribute("data-category");
+
+        if (
+          category === "All" ||
+          itemCategory === category
+        ) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+
+      });
+
+    });
+  });
+</script>
+
+<!-- IMAGE LIGHTBOX -->
+<div
+  id="lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-6"
+>
+  <button
+    id="lightbox-close"
+    class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 transition"
+    aria-label="Close image"
+  >
+    &times;
+  </button>
+
+  <img
+    id="lightbox-image"
+    src=""
+    alt=""
+    class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
+  />
+</div>
+
+<script>
+  const lightbox = document.querySelector("#lightbox");
+  const lightboxImage = document.querySelector("#lightbox-image");
+  const closeButton = document.querySelector("#lightbox-close");
+  const galleryImages = document.querySelectorAll("[data-lightbox-src]");
+
+  galleryImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      const src = image.getAttribute("data-lightbox-src");
+      const alt = image.getAttribute("data-lightbox-alt");
+
+      if (lightboxImage) {
+        lightboxImage.setAttribute("src", src || "");
+        lightboxImage.setAttribute("alt", alt || "");
+      }
+
+      lightbox?.classList.remove("hidden");
+      lightbox?.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox() {
+    lightbox?.classList.add("hidden");
+    lightbox?.classList.remove("flex");
+    document.body.style.overflow = "";
+  }
+
+  closeButton?.addEventListener("click", closeLightbox);
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+</script>
