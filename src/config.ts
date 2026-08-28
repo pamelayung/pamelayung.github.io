@@ -66,7 +66,6 @@ export const siteConfig = {
       bullets: [
         "Supported client IT risk engagements through process documentation, evidence review, walkthroughs, and ITGC/ITAC testing.",
         "Designed innovative presentation materials that improve how technology risk findings and recommendations are communicated to clients.",
-        "Helped test new features before release by identifying bugs and validating fixes.",
         "Evaluated technology risks, documenting key controls, and supporting SOX and financial statement audit procedures for fintech and robotics clients.",
       ],
     },
