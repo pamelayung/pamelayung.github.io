@@ -49,7 +49,7 @@ export const siteConfig = {
   ],
   experience: [
     {
-      company: "San Mateo County Sheriff’s Office (with C3 AI)",
+      company: "San Mateo County Sheriff’s Office",
       title: "Technical Services Unit Intern",
       dateRange: "Jun 2025 - Present",
       bullets: [
@@ -99,7 +99,7 @@ export const siteConfig = {
       degree: "Bachelor of Science in Cognitive Science with Specialization in Machine Learning and Neural Computation",
       dateRange: "Sept 2023 - June 2026",
       achievements: [
-        "3.81 GPA",
+        "3.80 GPA",
         'President of <a href="https://tritonrobotics.org" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">Triton Robotics</a>',
       ],
     },
